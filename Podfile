@@ -8,9 +8,6 @@ def shared_pods
   pod 'Alamofire'
   pod 'lottie-ios'
   pod 'Kingfisher'
-  pod 'RxSwift'
-  pod 'RxCocoa'
-  pod 'RxDataSources'
 end
 
 target 'Movies' do
