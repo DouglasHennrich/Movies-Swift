@@ -169,17 +169,6 @@ extension HomeViewController: UITableViewDataSource {
     
 }
 
-//
-//extension HomeViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 150, height: 250)
-//    }
-//
-//}
-
 // MARK: CollectionView Delegate
 extension HomeViewController: UICollectionViewDelegate {
     

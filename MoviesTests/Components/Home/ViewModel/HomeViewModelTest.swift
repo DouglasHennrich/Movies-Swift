@@ -1,59 +1,39 @@
 //
-//  HomeViewModel.swift
-//  Movies
+//  HomeViewModelTest.swift
+//  MoviesTests
 //
-//  Created by Douglas Hennrich on 28/07/20.
+//  Created by Douglas Hennrich on 01/08/20.
 //  Copyright © 2020 Douglas Hennrich. All rights reserved.
 //
 
-import Foundation
+import XCTest
+@testable import Movies
 
-// MARK: Delegate
-protocol HomeViewModelDelegate: AnyObject {
-    var loading: Binder<(actived: Bool, message: String?)> { get }
-    var error: Binder<String> { get }
-    var movies: Binder<[MovieViewModel]> { get }
-    var highlights: [MovieViewModel] { get }
-    
-    func highlightsCount() -> Int
-    func moviesCount() -> Int
-    func getMovies(fromRefresh: Bool)
-    func getMovie(on section: Int, at: Int) -> MovieViewModel?
-    func openMovie(on section: Int, at row: Int)
-}
-
-// MARK: ViewModel
-class HomeViewModel {
+// swiftlint:disable force_cast
+class HomeViewModelTest: HomeViewModelDelegate {
     
     // MARK: Properties
-    private lazy var logger: Logger = Logger.forClass(Self.self)
-    private var navigation: HomeCoordinatorDelegate?
     private let service: HomeServiceDelegate
-    
     private var offset: Int = 0
     private var firstRequest: Bool = true
-    private let numberOfHighlights: Int = 5
+    private let numberOfHighlights: Int = 1
+    var expectation: XCTestExpectation
+    var apiShouldFail: Bool = false
     
     var loading: Binder<(actived: Bool, message: String?)> = Binder((false, nil))
     var error: Binder<String> = Binder("")
     var movies: Binder<[MovieViewModel]> = Binder([])
+    
     var highlights: [MovieViewModel] = []
     
     // MARK: Init
-    init(navigation: HomeCoordinatorDelegate?,
-         service: HomeServiceDelegate = HomeService()) {
-        self.navigation = navigation
+    init(service: HomeServiceDelegate = HomeServiceTest(),
+         expectation: XCTestExpectation) {
         self.service = service
+        self.expectation = expectation
     }
     
     // MARK: Actions
-    
-}
-
-// MARK: Extension
-extension HomeViewModel: HomeViewModelDelegate {
-    
-    //
     func getMovie(on section: Int, at: Int) -> MovieViewModel? {
         if section == 0 {
             return highlights.at(at)
@@ -83,6 +63,10 @@ extension HomeViewModel: HomeViewModelDelegate {
         
         loading.value = (true, "Buscando filmes")
         
+        if apiShouldFail {
+            (service as! HomeServiceTest).shouldFail = true
+        }
+        
         service.getMovies(offset: offset,
                           order: .openingDate) { [weak self] result in
                             guard let self = self else { return }
@@ -104,25 +88,20 @@ extension HomeViewModel: HomeViewModelDelegate {
                                 self.highlights = getHighlights
                                 self.movies.value = getNewMovies
                                 
+                                self.expectation.fulfill()
+                                
                             case .failure(let error):
                                 guard let error = error as? ServiceError else {
                                     return
                                 }
                                 
                                 self.error.value = error.message
+                                self.expectation.fulfill()
                             }
         }
     }
     
     //
-    func openMovie(on section: Int, at row: Int) {
-        guard let movie = section == 0 ?
-            highlights.at(row) : movies.value.at(row)
-            else {
-                return
-        }
+    func openMovie(on section: Int, at row: Int) {}
         
-        navigation?.openMovieDetails(with: movie)
-    }
-    
 }
