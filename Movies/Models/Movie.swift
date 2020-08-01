@@ -18,9 +18,9 @@ struct Movie: Codable {
     let summaryShort: String
     let publicationDate: String
     let openingDate: String?
-    let dateUpdated: String
+    let dateUpdated: String?
     let link: MovieLink
-    let multimedia: MovieMultimedia
+    let multimedia: MovieMultimedia?
 
     enum CodingKeys: String, CodingKey {
         case displayTitle = "display_title"

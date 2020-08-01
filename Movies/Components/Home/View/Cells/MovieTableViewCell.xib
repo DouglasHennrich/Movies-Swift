@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+        <array key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MovieTableViewCell" customModule="Movies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0EI-RQ-rc2">
+                        <rect key="frame" x="16" y="30" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="8Jl-iW-VHq"/>
+                            <constraint firstAttribute="height" constant="60" id="B0j-Dy-o0x"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78A-W4-MKX">
+                        <rect key="frame" x="86" y="10" width="218" height="18"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-5b-0Jz">
+                        <rect key="frame" x="86" y="31" width="218" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="NPX-nC-y1Q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                        <color key="textColor" red="0.92941176469999998" green="0.94901960780000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="reviewer:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWD-RN-0G3">
+                        <rect key="frame" x="86" y="93" width="47.5" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                        <color key="textColor" red="0.92941176469999998" green="0.94901960780000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author's name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7S-wz-KPL">
+                        <rect key="frame" x="138.5" y="94" width="165.5" height="14.5"/>
+                        <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wh-CO-VjQ">
+                        <rect key="frame" x="16" y="117" width="288" height="1"/>
+                        <color key="backgroundColor" red="0.0078431372549019607" green="0.24313725490196078" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="UGs-N6-KAB"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="7wh-CO-VjQ" secondAttribute="bottom" constant="2" id="1wB-VH-fjZ"/>
+                    <constraint firstItem="78A-W4-MKX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4rw-xH-wel"/>
+                    <constraint firstItem="0EI-RQ-rc2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AaJ-zW-fRT"/>
+                    <constraint firstItem="WWD-RN-0G3" firstAttribute="leading" secondItem="GM9-5b-0Jz" secondAttribute="leading" id="Ca1-zJ-0ni"/>
+                    <constraint firstItem="GM9-5b-0Jz" firstAttribute="leading" secondItem="78A-W4-MKX" secondAttribute="leading" id="FJs-eo-1kS"/>
+                    <constraint firstItem="78A-W4-MKX" firstAttribute="leading" secondItem="0EI-RQ-rc2" secondAttribute="trailing" constant="10" id="LIV-n7-LOq"/>
+                    <constraint firstItem="7wh-CO-VjQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="MYE-Af-XLc"/>
+                    <constraint firstItem="7wh-CO-VjQ" firstAttribute="top" secondItem="WWD-RN-0G3" secondAttribute="bottom" constant="9.5" id="Uj8-eM-Vrv"/>
+                    <constraint firstItem="x7S-wz-KPL" firstAttribute="leading" secondItem="WWD-RN-0G3" secondAttribute="trailing" constant="5" id="UqN-w0-gYm"/>
+                    <constraint firstItem="GM9-5b-0Jz" firstAttribute="top" secondItem="78A-W4-MKX" secondAttribute="bottom" constant="3" id="Y6Z-Zc-9Ja"/>
+                    <constraint firstAttribute="trailing" secondItem="GM9-5b-0Jz" secondAttribute="trailing" constant="16" id="cgE-ig-xsv"/>
+                    <constraint firstAttribute="trailing" secondItem="78A-W4-MKX" secondAttribute="trailing" constant="16" id="diB-ID-aPS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="x7S-wz-KPL" secondAttribute="trailing" id="f41-dt-X58"/>
+                    <constraint firstItem="7wh-CO-VjQ" firstAttribute="top" secondItem="x7S-wz-KPL" secondAttribute="bottom" constant="8.5" id="g7h-HB-WAZ"/>
+                    <constraint firstAttribute="trailing" secondItem="7wh-CO-VjQ" secondAttribute="trailing" constant="16" id="if9-ZT-Wi1"/>
+                    <constraint firstItem="WWD-RN-0G3" firstAttribute="top" secondItem="GM9-5b-0Jz" secondAttribute="bottom" constant="2" id="uSh-0o-iBj"/>
+                    <constraint firstItem="0EI-RQ-rc2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vTW-lC-jAD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieDescription" destination="GM9-5b-0Jz" id="rjo-Z2-TRL"/>
+                <outlet property="moviePhoto" destination="0EI-RQ-rc2" id="Jzq-Ry-Wzr"/>
+                <outlet property="movieReviewer" destination="x7S-wz-KPL" id="g5e-Ap-fVM"/>
+                <outlet property="movieTitle" destination="78A-W4-MKX" id="prz-Bb-Mev"/>
+            </connections>
+            <point key="canvasLocation" x="82.608695652173921" y="68.303571428571431"/>
+        </tableViewCell>
+    </objects>
+</document>

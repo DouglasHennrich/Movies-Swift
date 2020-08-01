@@ -13,7 +13,7 @@ extension UIColor {
     static let background: UIColor = UIColor(red: 43/255.0, green: 45/255.0, blue: 66/255.0, alpha: 1.0)
     static let primary: UIColor = UIColor(red: 237/255.0, green: 242/255.0, blue: 244/255.0, alpha: 1.0)
     static let secondary: UIColor = UIColor(red: 141/255.0, green: 153/255.0, blue: 62/255.0, alpha: 1.0)
-    static let hightlight: UIColor = UIColor(red: 4/255.0, green: 102/255.0, blue: 60/255.0, alpha: 1.0)
+    static let hightlight: UIColor = UIColor(red: 0/255.0, green: 102/255.0, blue: 208/255.0, alpha: 1.0)
     static let hightlightOver: UIColor = UIColor(red: 2/255.0, green: 62/255.0, blue: 125/255.0, alpha: 1.0)
 
     // Used in Letter Image Generate
@@ -35,6 +35,10 @@ extension UIColor {
             green: 153/255.0,
             blue: 62/255.0,
             alpha: 1.0)
+    }
+    
+    struct CustomHeader {
+        static let background: UIColor = UIColor(red: 56/255, green: 59/255, blue: 86/255, alpha: 1)
     }
     
 }
