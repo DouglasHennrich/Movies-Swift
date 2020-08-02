@@ -15,6 +15,11 @@ class FavoritesManager {
         case list = "favoritesList"
     }
     
+    enum FavoritesActions {
+        case save
+        case remove
+    }
+    
     // MARK: Shared
     static let shared: FavoritesManager = FavoritesManager()
     
@@ -37,7 +42,7 @@ class FavoritesManager {
     // MARK: Actions
     private func saveToDefaults() {
         if let data = try? JSONEncoder().encode(favorites) {
-            UserDefaults.standard.set(data, forKey: FavotitesEnum.list.rawValue)
+            defaults.set(data, forKey: FavotitesEnum.list.rawValue)
         } else {
             print("cant save")
         }

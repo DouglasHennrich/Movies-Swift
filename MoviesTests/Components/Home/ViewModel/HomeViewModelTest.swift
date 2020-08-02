@@ -104,11 +104,12 @@ class HomeViewModelTest: HomeViewModelDelegate {
     }
     
     //
-    func openMovie(on section: Int, at row: Int) {}
+    func openMovie(on section: Int, at row: Int, onBackFromDetails: @escaping () -> Void) {}
     
     //
     func resetSearch() {}
     
+    //
     func searchMovies(for movie: String) {
         service.searchMovies(by: movie) { [weak self] result in
             guard let self = self else { return }
@@ -137,6 +138,7 @@ class HomeViewModelTest: HomeViewModelDelegate {
         requestMovies(loadMore: true)
     }
     
+    //
     private func requestMovies(loadMore: Bool = false) {
         service.getMovies(offset: offset,
                           order: .openingDate) { [weak self] result in
@@ -168,12 +170,15 @@ class HomeViewModelTest: HomeViewModelDelegate {
                                     self.movies.value = getNewMovies
                                 }
                                 
+                                self.expectation.fulfill()
+                                
                             case .failure(let error):
                                 guard let error = error as? ServiceError else {
                                     return
                                 }
                                 
                                 self.error.value = error.message
+                                self.expectation.fulfill()
                             }
         }
     }

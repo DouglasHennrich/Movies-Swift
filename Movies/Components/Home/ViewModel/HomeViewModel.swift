@@ -22,7 +22,7 @@ protocol HomeViewModelDelegate: AnyObject {
     func getMovies(fromRefresh: Bool)
     func loadMore()
     func getMovie(on section: Int, at: Int) -> MovieViewModel?
-    func openMovie(on section: Int, at row: Int)
+    func openMovie(on section: Int, at row: Int, onBackFromDetails: @escaping () -> Void)
     func resetSearch()
     func searchMovies(for movie: String)
 }
@@ -138,13 +138,15 @@ extension HomeViewModel: HomeViewModelDelegate {
     }
     
     //
-    func openMovie(on section: Int, at row: Int) {
+    func openMovie(on section: Int, at row: Int, onBackFromDetails: @escaping () -> Void) {
         guard let movie = getMovie(on: section, at: row)
             else {
                 return
         }
         
-        navigation?.openMovieDetails(with: movie)
+        navigation?.openMovieDetails(with: movie) {
+            onBackFromDetails()
+        }
     }
     
     //

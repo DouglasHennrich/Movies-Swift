@@ -11,7 +11,7 @@ import XCTest
 
 // swiftlint:disable force_try
 class HomeServiceTest: XCTestCase, HomeServiceDelegate {
-    
+
     // MARK: Properties
     var shouldFail: Bool = false
     var movies: Movies {
@@ -27,6 +27,14 @@ class HomeServiceTest: XCTestCase, HomeServiceDelegate {
     func getMovies(offset: Int,
                    order: MoviesOrderMethod,
                    onCompletion: @escaping (Result<Movies, Error>) -> Void) {
+        if shouldFail {
+            return onCompletion(.failure(ServiceError.badRequest))
+        }
+        
+        return onCompletion(.success(movies))
+    }
+    
+    func searchMovies(by query: String, onCompletion: @escaping (Result<Movies, Error>) -> Void) {
         if shouldFail {
             return onCompletion(.failure(ServiceError.badRequest))
         }

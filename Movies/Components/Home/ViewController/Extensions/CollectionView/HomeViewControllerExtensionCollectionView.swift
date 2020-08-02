@@ -12,7 +12,12 @@ import UIKit
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel?.openMovie(on: indexPath.section, at: indexPath.row)
+        searchBar.endEditing(true)
+        searchingMovie = false
+        
+        viewModel?.openMovie(on: indexPath.section, at: indexPath.row) { [weak self] in
+            self?.onRefresh()
+        }
     }
     
 }

@@ -16,21 +16,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XYH-j2-pPT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Buscar por filme" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-J4-ZdX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <color key="tintColor" red="0.0078431372550000003" green="0.24313725489999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.0078431372550000003" green="0.24313725489999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.1764705882352941" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XYH-j2-pPT" firstAttribute="trailing" secondItem="fqR-ne-WzX" secondAttribute="trailing" id="0KK-BX-9yT"/>
+                            <constraint firstItem="q9C-J4-ZdX" firstAttribute="leading" secondItem="fqR-ne-WzX" secondAttribute="leading" id="3qf-Zi-Uxs"/>
                             <constraint firstItem="XYH-j2-pPT" firstAttribute="bottom" secondItem="fqR-ne-WzX" secondAttribute="bottom" id="6kB-tc-riK"/>
-                            <constraint firstItem="XYH-j2-pPT" firstAttribute="top" secondItem="fqR-ne-WzX" secondAttribute="top" id="HXy-oz-1xe"/>
                             <constraint firstItem="XYH-j2-pPT" firstAttribute="leading" secondItem="fqR-ne-WzX" secondAttribute="leading" id="gQa-gl-SYC"/>
+                            <constraint firstItem="q9C-J4-ZdX" firstAttribute="top" secondItem="fqR-ne-WzX" secondAttribute="top" id="i0O-gh-djn"/>
+                            <constraint firstItem="XYH-j2-pPT" firstAttribute="top" secondItem="q9C-J4-ZdX" secondAttribute="bottom" id="iBv-kd-Frj"/>
+                            <constraint firstItem="q9C-J4-ZdX" firstAttribute="trailing" secondItem="fqR-ne-WzX" secondAttribute="trailing" id="l5S-Xh-bz0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fqR-ne-WzX"/>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="q9C-J4-ZdX" id="mcm-Mx-ScD"/>
                         <outlet property="tableView" destination="XYH-j2-pPT" id="Ct9-uk-qvB"/>
                     </connections>
                 </viewController>
