@@ -23,6 +23,8 @@ class HomeViewModelTest: HomeViewModelDelegate {
     var loading: Binder<(actived: Bool, message: String?)> = Binder((false, nil))
     var error: Binder<String> = Binder("")
     var movies: Binder<[MovieViewModel]> = Binder([])
+    var noMoreData: Binder<Bool> = Binder(false)
+    var search: Binder<[MovieViewModel]> = Binder([])
     
     var highlights: [MovieViewModel] = []
     
@@ -103,5 +105,76 @@ class HomeViewModelTest: HomeViewModelDelegate {
     
     //
     func openMovie(on section: Int, at row: Int) {}
-        
+    
+    //
+    func resetSearch() {}
+    
+    func searchMovies(for movie: String) {
+        service.searchMovies(by: movie) { [weak self] result in
+            guard let self = self else { return }
+            self.loading.value = (false, nil)
+            switch result {
+            case .success(let moviesManager):
+                let (_, foundedMovies) = UsefulFunctions
+                    .separeteHighlightsFromMovies(
+                        for: 0,
+                        with: moviesManager.results)
+                
+                self.search.value = foundedMovies
+                
+            case .failure(let error):
+                guard let error = error as? ServiceError else {
+                    return
+                }
+                self.noMoreData.value = true
+                self.error.value = error.message
+            }
+        }
+    }
+    
+    //
+    func loadMore() {
+        requestMovies(loadMore: true)
+    }
+    
+    private func requestMovies(loadMore: Bool = false) {
+        service.getMovies(offset: offset,
+                          order: .openingDate) { [weak self] result in
+                            guard let self = self else { return }
+                            self.loading.value = (false, nil)
+                            
+                            switch result {
+                            case .success(let moviesManager):
+                                self.offset += moviesManager.numResults
+                                
+                                let (getHighlights, getNewMovies) = UsefulFunctions
+                                    .separeteHighlightsFromMovies(
+                                        for: self.firstRequest ? self.numberOfHighlights : 0,
+                                        with: moviesManager.results)
+                                
+                                if self.firstRequest {
+                                    self.firstRequest = false
+                                }
+                                
+                                if !moviesManager.hasMore {
+                                    self.noMoreData.value = true
+                                }
+                                
+                                if loadMore {
+                                    self.movies.value.append(contentsOf: getNewMovies)
+                                    
+                                } else {
+                                    self.highlights = getHighlights
+                                    self.movies.value = getNewMovies
+                                }
+                                
+                            case .failure(let error):
+                                guard let error = error as? ServiceError else {
+                                    return
+                                }
+                                
+                                self.error.value = error.message
+                            }
+        }
+    }
 }
