@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MovieViewModel {
+struct MovieViewModel: Codable {
     
     private let movie: Movie
     
@@ -28,9 +28,23 @@ struct MovieViewModel {
         return movie.byline
     }
     
+    var favorited: Bool {
+        return FavoritesManager.shared.alreadyOnList(self)
+    }
+    
     // MARK: Init
     init(movie: Movie) {
         self.movie = movie
+    }
+    
+}
+
+extension MovieViewModel: Equatable {
+    
+    static func == (lhs: MovieViewModel, rhs: MovieViewModel) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.reviewer == rhs.reviewer &&
+            lhs.description == rhs.description
     }
     
 }

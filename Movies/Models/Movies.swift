@@ -26,8 +26,18 @@ struct Movies: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         copyright = try? container.decode(String.self, forKey: .copyright)
-        hasMore = try container.decode(Bool.self, forKey: .hasMore)
-        numResults = try container.decode(Int.self, forKey: .numResults)
+        
+        if let hasMoreDecoded = try? container.decode(Bool.self, forKey: .hasMore) {
+            hasMore = hasMoreDecoded
+        } else {
+            hasMore = false
+        }
+        
+        if let numResultsDecoded = try? container.decode(Int.self, forKey: .numResults) {
+            numResults = numResultsDecoded
+        } else {
+            numResults = 0
+        }
         
         let throwables = try container.decode([Throwable<Movie>].self, forKey: .results)
         results = throwables.compactMap { try? $0.result.get() }

@@ -71,6 +71,13 @@
                             <constraint firstAttribute="height" constant="1" id="UGs-N6-KAB"/>
                         </constraints>
                     </view>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HYJ-aH-IaQ">
+                        <rect key="frame" x="16" y="10" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="dzc-J7-jkn"/>
+                            <constraint firstAttribute="width" constant="20" id="uzc-BK-nHA"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -78,6 +85,8 @@
                     <constraint firstItem="78A-W4-MKX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4rw-xH-wel"/>
                     <constraint firstItem="0EI-RQ-rc2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AaJ-zW-fRT"/>
                     <constraint firstItem="WWD-RN-0G3" firstAttribute="leading" secondItem="GM9-5b-0Jz" secondAttribute="leading" id="Ca1-zJ-0ni"/>
+                    <constraint firstItem="HYJ-aH-IaQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="EPO-PT-Yd7"/>
+                    <constraint firstItem="HYJ-aH-IaQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EiY-aY-ggs"/>
                     <constraint firstItem="GM9-5b-0Jz" firstAttribute="leading" secondItem="78A-W4-MKX" secondAttribute="leading" id="FJs-eo-1kS"/>
                     <constraint firstItem="78A-W4-MKX" firstAttribute="leading" secondItem="0EI-RQ-rc2" secondAttribute="trailing" constant="10" id="LIV-n7-LOq"/>
                     <constraint firstItem="7wh-CO-VjQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="MYE-Af-XLc"/>
@@ -96,6 +105,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="favoriteIcon" destination="HYJ-aH-IaQ" id="w9R-pB-yqz"/>
                 <outlet property="movieDescription" destination="GM9-5b-0Jz" id="rjo-Z2-TRL"/>
                 <outlet property="moviePhoto" destination="0EI-RQ-rc2" id="Jzq-Ry-Wzr"/>
                 <outlet property="movieReviewer" destination="x7S-wz-KPL" id="g5e-Ap-fVM"/>

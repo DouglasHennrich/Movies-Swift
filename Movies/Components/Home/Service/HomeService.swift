@@ -12,6 +12,9 @@ protocol HomeServiceDelegate: AnyObject {
     func getMovies(offset: Int,
                    order: MoviesOrderMethod,
                    onCompletion: @escaping (Result<Movies, Error>) -> Void)
+    
+    func searchMovies(by query: String,
+                      onCompletion: @escaping (Result<Movies, Error>) -> Void)
 }
 
 class HomeService {
@@ -56,6 +59,27 @@ extension HomeService: HomeServiceDelegate {
             }
         }
         
+    }
+    
+    func searchMovies(by query: String,
+                      onCompletion: @escaping (Result<Movies, Error>) -> Void) {
+        let parameters: [String: Any] = [
+            "order": MoviesOrderMethod.openingDate.rawValue,
+            "query": query
+        ]
+        
+        service.request(withUrl: API.search.rawValue,
+                        withMethod: .get,
+                        andParameters: parameters) { (response: Result<Movies, Error>) in
+            
+            switch response {
+            case .success(let movies):
+                return onCompletion(.success(movies))
+            
+            case .failure(let error):
+                return onCompletion(.failure(error))
+            }
+        }
     }
     
 }

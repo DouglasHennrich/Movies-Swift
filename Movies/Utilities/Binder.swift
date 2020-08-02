@@ -39,6 +39,10 @@ class Binder<T> {
     func isBinded() -> Bool {
         return listener != nil
     }
+    
+    func fire() {
+        callListener()
+    }
 
     private func callListener() {
         if Thread.isMainThread {

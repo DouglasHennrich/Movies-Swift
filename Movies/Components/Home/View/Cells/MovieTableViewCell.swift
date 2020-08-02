@@ -24,6 +24,14 @@ class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var movieReviewer: UILabel!
     
+    @IBOutlet weak var favoriteIcon: UIImageView! {
+        didSet {
+            favoriteIcon.isHidden = true
+            favoriteIcon.image = UIImage.Icons.heart
+            favoriteIcon.tintColor = .hightlight
+        }
+    }
+    
     // MARK: Life cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,6 +43,7 @@ class MovieTableViewCell: UITableViewCell {
         movieReviewer.text = nil
         movieDescription.text = nil
         movieReviewer.text = nil
+        favoriteIcon.isHidden = true
         super.prepareForReuse()
     }
 
@@ -48,6 +57,8 @@ class MovieTableViewCell: UITableViewCell {
         movieTitle.text = movie.title
         movieDescription.text = movie.description
         movieReviewer.text = movie.reviewer
+        
+        favoriteIcon.isHidden = !movie.favorited
     }
     
 }
