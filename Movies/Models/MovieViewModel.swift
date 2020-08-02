@@ -11,6 +11,11 @@ import Foundation
 struct MovieViewModel: Codable {
     
     private let movie: Movie
+    private var dateFormatterGet: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }
     
     var photo: String {
         return movie.multimedia?.src ?? ""
@@ -28,8 +33,65 @@ struct MovieViewModel: Codable {
         return movie.byline
     }
     
+    var headline: String {
+        return movie.headline
+    }
+    
     var favorited: Bool {
         return FavoritesManager.shared.alreadyOnList(self)
+    }
+    
+    var link: String {
+        return movie.link.url
+    }
+    
+    var linkDescription: String {
+        return movie.link.suggestedLinkText
+    }
+    
+    var publicDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        guard let date = dateFormatterGet.date(from: movie.publicationDate)
+            else {
+                return "--"
+        }
+        
+        return formatter.string(from: date)
+    }
+    
+    var updatedDate: String {
+        let updatedDateFormatterGet = DateFormatter()
+        updatedDateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        
+        guard let fromMovie = movie.dateUpdated,
+            let date = updatedDateFormatterGet.date(from: fromMovie)
+            else {
+                return "--"
+        }
+        
+        return formatter.string(from: date)
+    }
+    
+    var openingDate: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy"
+        
+        guard let fromMovie = movie.openingDate,
+            let date = dateFormatterGet.date(from: fromMovie)
+            else {
+                return "--"
+        }
+        
+        return formatter.string(from: date)
+    }
+    
+    var rate: String? {
+        return movie.mpaaRating.rawValue
     }
     
     // MARK: Init

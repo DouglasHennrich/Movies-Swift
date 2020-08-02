@@ -64,6 +64,11 @@ class HomeViewController: UIViewController, Storyboarded {
         viewModel?.getMovies(fromRefresh: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: Actions
     private func configRefreshControl() {
         refreshControl.tintColor = .primary
@@ -115,10 +120,11 @@ class HomeViewController: UIViewController, Storyboarded {
         
     }
 
-    @objc private func onRefresh() {
+    @objc func onRefresh() {
         searchingMovie = false
         view.endEditing(true)
         searchController.searchBar.text = ""
+        searchController.searchBar.endEditing(true)
         noMoreData = false
         viewModel?.getMovies(fromRefresh: true)
     }

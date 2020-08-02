@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GenericTableViewCell" rowHeight="60" id="KGk-i7-Jjw" customClass="GenericTableViewCell" customModule="Movies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="First label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPy-9R-FCN">
+                        <rect key="frame" x="10" y="15" width="84.5" height="18"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                        <color key="textColor" red="0.0078431372550000003" green="0.24313725489999999" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="First label value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVt-xn-xSc">
+                        <rect key="frame" x="104.5" y="15" width="205.5" height="18"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Second label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP0-5F-rLG">
+                        <rect key="frame" x="10" y="41" width="84.5" height="18"/>
+                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="15"/>
+                        <color key="textColor" red="0.0078431372550000003" green="0.24313725489999999" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second label value" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBd-gw-GlM">
+                        <rect key="frame" x="104.5" y="41" width="205.5" height="19"/>
+                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="VVt-xn-xSc" firstAttribute="leading" secondItem="yPy-9R-FCN" secondAttribute="trailing" constant="10" id="AJH-9m-WBb"/>
+                    <constraint firstItem="TBd-gw-GlM" firstAttribute="top" secondItem="VVt-xn-xSc" secondAttribute="bottom" constant="8" id="CDf-mw-t4w"/>
+                    <constraint firstItem="yPy-9R-FCN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="CHE-6W-kYj"/>
+                    <constraint firstAttribute="trailing" secondItem="TBd-gw-GlM" secondAttribute="trailing" constant="10" id="DNV-7N-z3R"/>
+                    <constraint firstAttribute="bottom" secondItem="TBd-gw-GlM" secondAttribute="bottom" id="Iw3-Bx-2me"/>
+                    <constraint firstItem="bP0-5F-rLG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="MVe-DD-nbw"/>
+                    <constraint firstItem="yPy-9R-FCN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="MfP-J6-WSP"/>
+                    <constraint firstItem="VVt-xn-xSc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="dP5-KK-bl2"/>
+                    <constraint firstItem="TBd-gw-GlM" firstAttribute="leading" secondItem="bP0-5F-rLG" secondAttribute="trailing" constant="10" id="hKh-u9-P08"/>
+                    <constraint firstItem="yPy-9R-FCN" firstAttribute="width" secondItem="bP0-5F-rLG" secondAttribute="width" id="mB0-pb-qYI"/>
+                    <constraint firstItem="bP0-5F-rLG" firstAttribute="top" secondItem="VVt-xn-xSc" secondAttribute="bottom" constant="8" id="pVg-t5-tKA"/>
+                    <constraint firstAttribute="trailing" secondItem="VVt-xn-xSc" secondAttribute="trailing" constant="10" id="t0A-ad-QI3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="firstLabelKey" destination="yPy-9R-FCN" id="1og-nO-azk"/>
+                <outlet property="firstLabelValue" destination="VVt-xn-xSc" id="lpe-E8-PCo"/>
+                <outlet property="secondLabelKey" destination="bP0-5F-rLG" id="CWO-zz-a8k"/>
+                <outlet property="secondLabelValue" destination="TBd-gw-GlM" id="cvh-CW-Xux"/>
+            </connections>
+            <point key="canvasLocation" x="143.47826086956522" y="164.73214285714286"/>
+        </tableViewCell>
+    </objects>
+</document>

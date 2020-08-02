@@ -15,6 +15,11 @@ class FavoritesManager {
         case list = "favoritesList"
     }
     
+    enum FavoritesActions {
+        case save
+        case remove
+    }
+    
     // MARK: Shared
     static let shared: FavoritesManager = FavoritesManager()
     
