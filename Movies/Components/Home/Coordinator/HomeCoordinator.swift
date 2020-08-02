@@ -8,6 +8,14 @@
 
 import Foundation
 
-protocol HomeCoordinatorDelegate: AnyObject {}
+protocol HomeCoordinatorDelegate: AnyObject {
+    func openMovieDetails(with movie: MovieViewModel)
+}
 
-extension AppCoordinator: HomeCoordinatorDelegate {}
+extension AppCoordinator: HomeCoordinatorDelegate {
+    
+    func openMovieDetails(with movie: MovieViewModel) {
+        
+    }
+    
+}

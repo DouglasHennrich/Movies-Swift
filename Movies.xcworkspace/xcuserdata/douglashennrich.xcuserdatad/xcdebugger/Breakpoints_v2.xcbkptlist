@@ -7,17 +7,238 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "46857610-D4CE-4B2A-A6B4-A8B7445F0011"
-            shouldBeEnabled = "Yes"
+            uuid = "DB890E35-42F5-4B04-BD0C-7ACA1C1339D2"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Movies/Components/Home/Service/HomeService.swift"
+            filePath = "Movies/Components/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "getMovie(on:at:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "283F902C-C15F-4037-8717-DF73C5475A61"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Components/Home/ViewController/Extensions/SearchBar/HomeViewControllerExtensionSearchBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "860E0E82-959B-48B7-BFA8-A2C6AD4B61FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Components/Home/ViewController/Extensions/SearchBar/HomeViewControllerExtensionSearchBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "searchBar(_:textDidChange:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A7BDD959-275E-484F-9504-44250AE96363"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Components/Home/ViewController/Extensions/SearchBar/HomeViewControllerExtensionSearchBar.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
             endingLineNumber = "57"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "searchBarCancelButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AF0C3B74-8729-4F29-94A3-2A0E7BAB2A2E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Models/FavoritesManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12DAB83E-4363-4E2F-A29C-963EEE42DB69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Models/FavoritesManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "saveToDefaults()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A4B424A-3DDD-40CA-91A8-7749D248E105"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Service/ServiceClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "request(withUrl:withMethod:andParameters:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4B95520-F145-4D9C-AA8E-640B7A0E7799"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Service/ServiceClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "request(withUrl:withMethod:andParameters:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55D656BF-F6F9-49E0-BFAA-83E959F9078C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Service/ServiceClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "request(withUrl:withMethod:andParameters:onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55D656BF-F6F9-49E0-BFAA-83E959F9078C - 7157dbff932afd8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Movies.ServiceClient.request&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withUrl: Swift.String, withMethod: Alamofire.HTTPMethod, andParameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, onCompletion: (Swift.Result&lt;A, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglashennrich/Documents/Projects/Studies/xCode/Movies/Movies/Service/ServiceClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1387">
+               </Location>
+               <Location
+                  uuid = "55D656BF-F6F9-49E0-BFAA-83E959F9078C - 7157dbff932afd8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Movies.ServiceClient.request&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withUrl: Swift.String, withMethod: Alamofire.HTTPMethod, andParameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, onCompletion: (Swift.Result&lt;A, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglashennrich/Documents/Projects/Studies/xCode/Movies/Movies/Service/ServiceClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1579">
+               </Location>
+               <Location
+                  uuid = "55D656BF-F6F9-49E0-BFAA-83E959F9078C - 7157dbff932afd8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Movies.ServiceClient.request&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withUrl: Swift.String, withMethod: Alamofire.HTTPMethod, andParameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, onCompletion: (Swift.Result&lt;A, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglashennrich/Documents/Projects/Studies/xCode/Movies/Movies/Service/ServiceClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "1859">
+               </Location>
+               <Location
+                  uuid = "55D656BF-F6F9-49E0-BFAA-83E959F9078C - 7157dbff932afd8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Movies.ServiceClient.request&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withUrl: Swift.String, withMethod: Alamofire.HTTPMethod, andParameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, onCompletion: (Swift.Result&lt;A, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglashennrich/Documents/Projects/Studies/xCode/Movies/Movies/Service/ServiceClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "2123">
+               </Location>
+               <Location
+                  uuid = "55D656BF-F6F9-49E0-BFAA-83E959F9078C - 7157dbff932afd8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Any, Alamofire.AFError&gt;) -&gt; () in Movies.ServiceClient.request&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(withUrl: Swift.String, withMethod: Alamofire.HTTPMethod, andParameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, onCompletion: (Swift.Result&lt;A, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movies"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/douglashennrich/Documents/Projects/Studies/xCode/Movies/Movies/Service/ServiceClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "2399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B24B868D-58CA-469F-9BA6-0F8BD9FA3691"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movies/Service/ServiceClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "request(withUrl:withMethod:andParameters:onCompletion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

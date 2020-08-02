@@ -1,0 +1,51 @@
+{
+    "copyright": "Mock data",
+    "has_more": false,
+    "num_results": 1,
+    "results": [
+        {
+            "display_title": "The Godfather",
+            "mpaa_rating": "R",
+            "critics_pick": 1,
+            "byline": "Vincent Canby",
+            "headline": "THE GODFATHER (MOVIE)",
+            "summary_short": "Puzo's Mafioso novel. Scalding and memorable.",
+            "publication_date": "1972-03-16",
+            "opening_date": "1972-03-24",
+            "date_updated": "2017-11-02 04:17:26",
+            "link": {
+                "type": "article",
+                "url": "http://www.nytimes.com/movie/review?res=EE05E7DF1739E464BC4E52DFB5668389669EDE",
+                "suggested_link_text": "Read the New York Times Review of The Godfather"
+            },
+            "multimedia": {
+                "type": "mediumThreeByTwo210",
+                "src": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg",
+                "width": 210,
+                "height": 140
+            }
+        },
+        {
+            "display_title": "The Godfather",
+            "mpaa_rating": "R",
+            "critics_pick": 1,
+            "byline": "Vincent Canby",
+            "headline": "THE GODFATHER (MOVIE)",
+            "summary_short": "Puzo's Mafioso novel. Scalding and memorable.",
+            "publication_date": "1972-03-16",
+            "opening_date": "1972-03-24",
+            "date_updated": "2017-11-02 04:17:26",
+            "link": {
+                "type": "article",
+                "url": "http://www.nytimes.com/movie/review?res=EE05E7DF1739E464BC4E52DFB5668389669EDE",
+                "suggested_link_text": "Read the New York Times Review of The Godfather"
+            },
+            "multimedia": {
+                "type": "mediumThreeByTwo210",
+                "src": "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,704,1000_AL_.jpg",
+                "width": 210,
+                "height": 140
+            }
+        }
+    ]
+}

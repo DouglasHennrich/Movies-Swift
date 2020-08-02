@@ -1,18 +1,17 @@
 //
-//  HightlightTableViewCell.swift
+//  LoadingTableViewCell.swift
 //  Movies
 //
-//  Created by Douglas Hennrich on 28/07/20.
+//  Created by Douglas Hennrich on 01/08/20.
 //  Copyright © 2020 Douglas Hennrich. All rights reserved.
 //
 
 import UIKit
 
-class HightlightTableViewCell: UITableViewCell {
-    
-    // MARK: Properties
+class LoadingTableViewCell: UITableViewCell {
     
     // MARK: IBOutlets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: Life cycle
     override func awakeFromNib() {
@@ -23,10 +22,5 @@ class HightlightTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    // MARK: Actions
-    func config(with: String) {
-        
-    }
-    
+
 }

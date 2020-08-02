@@ -23,7 +23,7 @@
 		<key>APIKey</key>
 		<string>Us2Kedc9KfRBV78bPZU7cTCnwkhJaZXN</string>
 		<key>BaseURL</key>
-		<string>https://api.nytimes.com/svc/movies/v2</string>
+		<string>https://api.nytimes.com/svc/movies/v2/reviews</string>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -73,5 +73,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

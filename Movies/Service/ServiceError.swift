@@ -11,6 +11,7 @@ import Foundation
 enum ServiceError: Error {
     case badRequest             // Status code 400
     case notFound               // Status code 404
+    case toManyRequests         // Status code 429
     case internalServerError    // Status code 500
     
     case cantCreateUrl
@@ -25,6 +26,9 @@ enum ServiceError: Error {
         case .notFound:
             return "API não encontrada"
             
+        case .toManyRequests:
+            return "API indisponível no momento"
+            
         case .internalServerError:
             return "Erro na API"
             
@@ -38,4 +42,24 @@ enum ServiceError: Error {
             return "Erro inesperado"
         }
     }
+    
+    var type: ServiceError {
+        switch self {
+        case .badRequest:
+            return .badRequest
+        case .notFound:
+            return .notFound
+        case .toManyRequests:
+            return .toManyRequests
+        case .internalServerError:
+            return .internalServerError
+        case .cantCreateUrl:
+            return .cantCreateUrl
+        case .noService:
+            return .noService
+        case .unknow(let error):
+            return .unknow(error: error)
+        }
+    }
+    
 }
