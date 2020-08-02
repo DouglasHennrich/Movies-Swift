@@ -67,7 +67,7 @@ class DetailsViewController: UIViewController, Storyboarded {
         navigationItem.rightBarButtonItem = favoriteButton
     }
     
-    @objc private func onFavoriteButton() {
+    @objc func onFavoriteButton() {
         viewModel?.onFavoritePressed()
     }
     

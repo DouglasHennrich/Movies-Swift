@@ -13,7 +13,6 @@ class HomeViewController: UIViewController, Storyboarded {
     // MARK: Properties
     private lazy var logger: Logger = Logger.forClass(Self.self)
     private var refreshControl = UIRefreshControl()
-    let searchController = UISearchController(searchResultsController: nil)
     
     var searchTask: DispatchWorkItem?
     let searchInterval: Double = 0.5
@@ -54,11 +53,23 @@ class HomeViewController: UIViewController, Storyboarded {
         }
     }
     
+    @IBOutlet weak var searchBar: UISearchBar! {
+        didSet {
+            searchBar.delegate = self
+            searchBar.searchTextField.textColor = .primary
+            
+            definesPresentationContext = true
+
+            let glassIconView = searchBar.searchTextField.leftView as? UIImageView
+            glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+            glassIconView?.tintColor = .hightlight
+        }
+    }
+    
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configRefreshControl()
-        setupSearchBar()
         
         setUpBinds()
         viewModel?.getMovies(fromRefresh: false)
@@ -123,8 +134,8 @@ class HomeViewController: UIViewController, Storyboarded {
     @objc func onRefresh() {
         searchingMovie = false
         view.endEditing(true)
-        searchController.searchBar.text = ""
-        searchController.searchBar.endEditing(true)
+        searchBar.text = ""
+        searchBar.endEditing(true)
         noMoreData = false
         viewModel?.getMovies(fromRefresh: true)
     }

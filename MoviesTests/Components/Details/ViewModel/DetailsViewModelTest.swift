@@ -1,49 +1,41 @@
 //
-//  DetailsViewModel.swift
-//  Movies
+//  DetailsViewModelTest.swift
+//  MoviesTests
 //
 //  Created by Douglas Hennrich on 02/08/20.
 //  Copyright © 2020 Douglas Hennrich. All rights reserved.
 //
 
-import Foundation
+import XCTest
+@testable import Movies
 
-// MARK: Delegate
-protocol DetailsViewModelDelegate: AnyObject {
-    var navTitle: String { get }
-    var favorited: Binder<Bool> { get }
-    
-    func getPhoto() -> String
-    func getSectionsCount() -> Int
-    func getIem(on section: Int, at index: Int) -> (type: MovieDetailsTypes, data: [String: Any])?
-    func onFavoritePressed()
-    func getLink() -> URL?
-}
-
-// MARK: ViewModel
-class DetailsViewModel {
+class DetailsViewModelTest: DetailsViewModelDelegate {
     
     // MARK: Properties
-    private lazy var logger: Logger = Logger.forClass(Self.self)
-    private let favoriteManager = FavoritesManager.shared
     private var movieInfos: [SectionsAndItemsDetails] = []
+    private let favoriteManager = FavoritesManager.shared
     
-    var favorited: Binder<Bool> = Binder(false)
+    var expectation: XCTestExpectation
+    var apiShouldFail: Bool = false
     
     var movie: MovieViewModel
     var navTitle: String
     
+    var favorited: Binder<Bool> = Binder(false)
+    
     // MARK: Init
-    init(movie: MovieViewModel) {
+    init(movie: MovieViewModel,
+         expectation: XCTestExpectation) {
         self.movie = movie
+        self.expectation = expectation
         
         navTitle = movie.title
         
         favorited.value = movie.favorited
-        
+            
         setInfo()
     }
-    
+        
     // MARK: Actions
     private func setInfo() {
         
@@ -85,21 +77,21 @@ class DetailsViewModel {
         ])
         movieInfos.append(link)
         
+        //
+        self.expectation.fulfill()
     }
 
     private func favorite(action: FavoritesManager.FavoritesActions) {
         if action == .save {
-            favoriteManager.save(movie)
+             favoriteManager.test_save(movie)
             favorited.value = true
         } else if action == .remove {
-            favoriteManager.remove(movie)
+             favoriteManager.test_remove(movie)
             favorited.value = false
         }
+        
+        expectation.fulfill()
     }
-}
-
-// MARK: Extension
-extension DetailsViewModel: DetailsViewModelDelegate {
     
     func getPhoto() -> String {
         return movie.photo
@@ -127,4 +119,9 @@ extension DetailsViewModel: DetailsViewModelDelegate {
         favorite(action: movie.favorited ? .remove : .save)
     }
     
+    func getSectionIndex(ofType type: MovieDetailsTypes) -> Int {
+        let index = movieInfos.firstIndex { $0.type == type }
+        return index ?? 0
+    }
+
 }

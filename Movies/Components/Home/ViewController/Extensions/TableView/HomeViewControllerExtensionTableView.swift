@@ -115,7 +115,7 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        searchController.searchBar.endEditing(true)
+        searchBar.endEditing(true)
         viewModel?.openMovie(on: indexPath.section, at: indexPath.row) { [weak self] in
             self?.onRefresh()
         }

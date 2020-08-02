@@ -12,6 +12,9 @@ import UIKit
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchBar.endEditing(true)
+        searchingMovie = false
+        
         viewModel?.openMovie(on: indexPath.section, at: indexPath.row) { [weak self] in
             self?.onRefresh()
         }

@@ -10,21 +10,6 @@ import UIKit
 
 extension HomeViewController: UISearchBarDelegate {
     
-    func setupSearchBar() {
-        searchController.searchBar.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.placeholder = "Buscar por filme"
-        searchController.searchBar.searchBarStyle = .minimal
-        
-        let glassIconView = searchController.searchBar.searchTextField.leftView as? UIImageView
-        glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
-        glassIconView?.tintColor = .hightlight
-        
-        searchController.searchBar.searchTextField.textColor = .primary
-        tableView.tableHeaderView = searchController.searchBar
-    }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let textToSearch = searchBar.text,
             !textToSearch.isEmpty else {
@@ -54,6 +39,7 @@ extension HomeViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         searchingMovie = false
         viewModel?.resetSearch()
     }
