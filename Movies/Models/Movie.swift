@@ -18,9 +18,9 @@ struct Movie: Codable {
     let summaryShort: String
     let publicationDate: String
     let openingDate: String?
-    let dateUpdated: String
+    let dateUpdated: String?
     let link: MovieLink
-    let multimedia: MovieMultimedia
+    let multimedia: MovieMultimedia?
 
     enum CodingKeys: String, CodingKey {
         case displayTitle = "display_title"
@@ -40,19 +40,16 @@ struct Movie: Codable {
 
 // MARK: - Link
 struct MovieLink: Codable {
-    let type: MovieLinkType
     let url: String
     let suggestedLinkText: String
 
     enum CodingKeys: String, CodingKey {
-        case type, url
+        case url
         case suggestedLinkText = "suggested_link_text"
     }
 }
 
 // MARK: - Multimedia
 struct MovieMultimedia: Codable {
-    let type: MovieMultimediaType
     let src: String
-    let width, height: Int
 }

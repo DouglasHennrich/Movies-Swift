@@ -102,7 +102,7 @@ extension ServiceClient: ServiceClientDelegate {
                         return onCompletion(.success(result))
                     } catch let errorCatch as NSError {
                         self?.logger.error(errorCatch.debugDescription)
-                        return onCompletion(.failure(ServiceError.badRequest))
+                        return onCompletion(.failure(ServiceError.internalServerError))
                     }
                     
                 case .failure(let error):
@@ -111,6 +111,8 @@ extension ServiceClient: ServiceClientDelegate {
                         return onCompletion(.failure(ServiceError.badRequest))
                     case 404:
                         return onCompletion(.failure(ServiceError.notFound))
+                    case 429:
+                        return onCompletion(.failure(ServiceError.toManyRequests))
                     case 500:
                         return onCompletion(.failure(ServiceError.internalServerError))
                     default:

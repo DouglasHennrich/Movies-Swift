@@ -10,10 +10,10 @@ import Foundation
 
 struct Movies: Codable {
     
-    let copyright: String
+    let copyright: String?
     let hasMore: Bool
     let numResults: Int
-    let results: [Movie]
+    var results: [Movie]
     
     enum CodingKeys: String, CodingKey {
         case copyright
@@ -25,9 +25,19 @@ struct Movies: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        copyright = try container.decode(String.self, forKey: .copyright)
-        hasMore = try container.decode(Bool.self, forKey: .hasMore)
-        numResults = try container.decode(Int.self, forKey: .numResults)
+        copyright = try? container.decode(String.self, forKey: .copyright)
+        
+        if let hasMoreDecoded = try? container.decode(Bool.self, forKey: .hasMore) {
+            hasMore = hasMoreDecoded
+        } else {
+            hasMore = false
+        }
+        
+        if let numResultsDecoded = try? container.decode(Int.self, forKey: .numResults) {
+            numResults = numResultsDecoded
+        } else {
+            numResults = 0
+        }
         
         let throwables = try container.decode([Throwable<Movie>].self, forKey: .results)
         results = throwables.compactMap { try? $0.result.get() }
